@@ -1,44 +1,21 @@
 <template>
   <v-app>
     <div class="container">
-      <!-- <v-col cols="12">
-        <v-autocomplete
-          v-model="groupTag"
-          :items="JSON.parse(JSON.stringify(itemsTagObj))"
-          @blur="searchGroupTag()"
-          dense
+      <v-col cols="12">
+        <Autocomplete
+          :itemsTagObj="JSON.parse(JSON.stringify(itemsTagObj))"
+          :searchGroupTag="searchGroupTag"
           label="Group Tag"
-        ></v-autocomplete>
+        />
 
         <div @click="createOptions()">
-          <v-select
-            v-model="value"
-            :items="JSON.parse(JSON.stringify(filterOptions))"
+          <Select
+            :filterOptions="JSON.parse(JSON.stringify(filterOptions))"
             label="Opções"
-            :menu-props="{ bottom: true, offsetY: true }"
-            multiple
-            deletable-chips
-            attach
-            chips
-          ></v-select>
+          />
         </div>
-      </v-col> -->
+      </v-col>
     </div>
-
-    <v-col cols="12">
-      <Autocomplete
-        :itemsTagObj="JSON.parse(JSON.stringify(itemsTagObj))"
-        :searchGroupTag="searchGroupTag"
-        label="Group Tag"
-      />
-
-      <div @click="createOptions()">
-        <Select
-          :filterOptions="JSON.parse(JSON.stringify(filterOptions))"
-          label="Opções"
-        />
-      </div>
-    </v-col>
   </v-app>
 </template>
 
